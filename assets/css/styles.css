@@ -182,3 +182,52 @@ linear-gradient(120deg,#cbd2ce 0 18%,#e9e7df 18% 35%,#b9c9c4 35% 38%,#e3dfd5 38%
  .basis .copy{padding-top:70px;padding-bottom:70px}
  .product-media img{padding:36px}
 }
+
+/* Desktop geometry pass from photographic original comparison */
+@media(min-width:981px){
+ .site-header{height:48px;padding:0 2.8vw;background:#20363d}
+ .brand{font-size:12px}.nav{gap:30px}.nav a{font-size:11px}
+ .intro{min-height:610px}.intro .copy{width:49%;min-height:610px;padding:70px 4.5vw}
+ .intro .copy h2{font-size:34px;margin-bottom:20px}.intro .big{font-size:64px}
+ .intro .media img{filter:none;object-position:center}
+ .basis{height:650px;min-height:650px;color:#fff;position:relative;overflow:hidden}
+ .basis .media{position:absolute;inset:0}.basis .media img{filter:brightness(.54);object-fit:cover;object-position:center 60%}
+ .basis-inner{position:relative;z-index:2;height:100%;padding:55px 4vw;display:flex;flex-direction:column}
+ .basis-inner h2{font-size:40px;margin:0 0 42px}
+ .basis-columns{display:grid;grid-template-columns:1fr 1fr;gap:12vw;align-items:start}
+ .basis-columns>div{border-top:2px solid rgba(255,255,255,.82);padding-top:18px;font-size:13px;line-height:1.45}
+ .basis-columns p{margin:0 0 15px}.basis-columns .btn{margin-top:4px}
+ .product{min-height:600px;grid-template-columns:1fr 1fr}
+ .product-media{min-height:600px}.product-media img{padding:0;max-height:none;object-fit:cover}
+ .product-copy{padding:55px 5vw}
+ .product-copy h2{font-size:30px}.product-copy h3{font-size:27px}
+ .specs{font-size:13px}.specs p{padding:5px 0;margin:0;border-bottom:1px solid rgba(40,50,50,.16)}
+ .filter-inline{font-size:12px}
+ .original-gem{min-height:470px}.original-gem .media{min-height:470px}.original-gem .copy{padding:55px 6vw}
+ .original-gem .copy h2{font-size:48px;line-height:.95}
+ .original-range{min-height:350px}.original-range .media{min-height:350px}.original-range .copy{padding:45px 5vw}
+ .original-range .copy h2{font-size:52px}
+ .service{min-height:520px}.service-copy{min-height:520px;padding:55px 4vw;width:56%;justify-content:flex-start}
+ .service-copy>h2{text-align:left;font-size:39px;margin:0 0 24px;max-width:600px}
+ .service-grid{grid-template-columns:1fr;margin:0;gap:0}
+ .service-grid article{display:grid;grid-template-columns:42px 1fr;column-gap:14px;padding:10px 0;border-top:1px solid rgba(255,255,255,.72)}
+ .service-grid img{grid-row:1/3;width:32px;height:32px;margin:0}
+ .service-grid h3{font-size:15px;margin:0 0 2px}.service-grid p{font-size:12px}
+ .service-copy>.btn{margin-top:18px;align-self:flex-start}
+ .story{padding:40px 3.5vw 55px;overflow:hidden}.story>h2{text-align:left;font-size:36px;margin-bottom:30px}
+ .cards{display:flex;gap:18px;max-width:none;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
+ .cards article{flex:0 0 calc((100% - 36px)/3);min-height:255px;padding:24px;scroll-snap-align:start}
+ .cards img{width:45px;height:45px}.cards h3{font-size:20px}
+ .team{padding:0}.team-layout{display:grid;grid-template-columns:1.15fr 3fr;gap:55px;padding:55px 4vw;background:#f2eee6}
+ .team-intro{padding:0;max-width:none}.team-intro h2{font-size:37px;color:#1590ad;margin-bottom:20px}
+ .team-intro p{font-size:14px}.team-grid{grid-template-columns:repeat(3,1fr);border:0}
+ .team-grid article{padding:0 22px;border:0}.team-grid h3{font-size:20px;margin:8px 0 14px}.team-grid p{font-size:12px}
+ .contact{padding:42px 4vw 0}.contact-top{display:grid;grid-template-columns:1fr 1.25fr;gap:50px;min-height:330px}
+ .contact-info{padding:0}.contact-info h2{font-size:34px}.contact-info p{font-size:13px}
+ .contact-form{padding:0;background:transparent}.contact-form h2{font-size:34px;margin-bottom:25px}
+ .map-panel{height:250px;margin-top:20px;background-color:#e6e3da}
+ .site-footer{min-height:430px;padding:45px 4vw 20px;grid-template-columns:.7fr 1.1fr .7fr 2fr;background:#13272d}
+ .footer-brand{grid-column:1/-1;justify-self:start;text-align:left;margin-top:50px}
+ .footer-brand span{font-size:86px}.footer-brand strong{font-size:48px}
+ .footer-legal{border:0;margin:0;padding-top:0}
+}
