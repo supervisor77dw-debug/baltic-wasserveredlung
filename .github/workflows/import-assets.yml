@@ -50,3 +50,5 @@ jobs:
             git commit -m "Import original Baltic website assets"
             git push
           fi
+
+# trigger asset import
