@@ -140,3 +140,45 @@ linear-gradient(120deg,#cbd2ce 0 18%,#e9e7df 18% 35%,#b9c9c4 35% 38%,#e3dfd5 38%
 .footer-brand{margin-top:15px}
 .map-panel{height:280px}
 }
+/* 2026-10-03 Originalabgleich: keine Neugestaltung, Rueckfuehrung an Wix-Referenz */
+.hero-bg{background:#163d47}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.72) saturate(.88)}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,18,23,.2),rgba(4,18,23,.03) 45%,rgba(4,18,23,.38))}
+.intro{position:relative;min-height:760px;background:#26363d;color:#fff}
+.intro .media{position:absolute;inset:0;min-height:0}
+.intro .media img{filter:brightness(.52);object-fit:cover}
+.intro .copy{position:relative;z-index:2;width:52%;min-height:760px;padding-left:7vw}
+.basis{position:relative;min-height:900px}
+.basis .media{position:absolute;inset:0;min-height:0}
+.basis .media img{filter:brightness(.42) saturate(.85);object-fit:cover}
+.basis .copy{position:relative;z-index:2;margin-left:auto;width:52%;min-height:900px;background:rgba(28,47,54,.76)}
+.product{min-height:700px}
+.product-media img{object-fit:contain;max-height:700px;padding:5vw}
+.product-connect .product-media{background:#e8e4dd}
+.product-premium-white .product-media{background:#20383f}
+.filter-inline{margin:22px 0 26px;padding-top:20px;border-top:1px solid rgba(31,49,52,.3)}
+.filter-inline h4{margin:0 0 12px;font-size:18px}
+.filter-inline p{margin:0 0 7px}
+.service{position:relative;min-height:720px;color:#fff;background:#24363d}
+.service-bg{position:absolute;inset:0;height:auto}
+.service-bg img{height:100%;filter:brightness(.38) saturate(.8)}
+.service-copy{position:relative;z-index:2;min-height:720px;display:flex;flex-direction:column;justify-content:center}
+.service-grid article{border-top-color:rgba(255,255,255,.5)}
+.service-grid p{color:rgba(255,255,255,.88)}
+.story{padding-top:6vw}
+.cards{grid-template-columns:repeat(3,1fr);max-width:1240px}
+.team-intro{padding-top:5vw;padding-bottom:3vw}
+.team-grid article{padding-top:3vw;padding-bottom:4vw}
+.contact-top{min-height:560px}
+@media(max-width:980px){
+ .intro .copy,.basis .copy{width:100%;background:rgba(28,47,54,.58)}
+ .intro .copy{min-height:700px}
+ .basis .copy{min-height:850px}
+ .product-media img{padding:8vw;max-height:580px}
+}
+@media(max-width:620px){
+ .intro,.intro .copy{min-height:620px}
+ .basis,.basis .copy{min-height:0}
+ .basis .copy{padding-top:70px;padding-bottom:70px}
+ .product-media img{padding:36px}
+}
