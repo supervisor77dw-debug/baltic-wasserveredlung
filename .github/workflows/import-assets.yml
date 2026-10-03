@@ -1,0 +1,52 @@
+name: Import Baltic assets
+on:
+  push:
+    paths:
+      - ".github/workflows/import-assets.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download Wix-owned assets from Dropbox export
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images assets/docs
+          curl -fL 'https://ucb124a68ee8afd356dd53c1bec1.dl.dropboxusercontent.com/cd/0/get/DJTQHmulcQ_xwf8wwDJcFSH61wDmiGttXJZ33fdvt_nSvbKX-5lDlC2wSvsypUJ303pRSjzgy9sbnnkZJxIU5u1kHOo_WmTcm3CqGJ2-0dv6JkwC-_WL1zrrjKwBFfEDIPQiBoMUGmxvkUu1R_6B8D5mKV_6fWHSUQmKb1bdTjxMoQ/file?c_luid=68d267b4' -o assets/images/header-original.png
+          curl -fL 'https://uce12b363cc018769159b7047b8c.dl.dropboxusercontent.com/cd/0/get/DJSVaDy20MpCgnQKSd9s7g22LOZzO7OAvXDcoGkj_JLWaJZlAcE9Ul5XwgOGXhHphEN-bqdLTIUGPmfP4Qpm5-tb0HUUNCcT-0eqOuh63rARtZYGQ_i1OmJ973Xbm5-y5iSRFvp04tqP7JF-ZbmuXwDp-eUaFps_qKoSym-hDmioDQ/file?c_luid=68d267b4' -o assets/images/content-water-02.png
+          curl -fL 'https://ucd37c2441fd64f031195844658e.dl.dropboxusercontent.com/cd/0/get/DJQ-6iiZAZbxLFqazBCXhupTe0Ku17YVGrMqKieDoceQ6j1UQkVvKwc_SuaCC7yhhtmSmyzDKa-zM4HcU5nwGDgClcGkpAeopI5WZDhvxGMgTI0YgpPf0Zw6IvLq8NQeZmvaRw96rzdU5Bya5stL8srrgrhO5mppFwbDho_LTuZM4A/file?c_luid=68d267b4' -o assets/images/anlage-schwarz-original.png
+          curl -fL 'https://uc4ff952691a8ec72e5c233728ac.dl.dropboxusercontent.com/cd/0/get/DJQQFrBxphgxcWqy4LYVQZUaT883T9GHp8jxclAr7yMbqjyb5Ql1yfOXRMC2np4YIuzl_cf_HsJ-tVTNpR9G9y0hBlkx1Q06d5zfB0YQ5Ka760OqAy-UqFLCf1fX21hx5ht6cTi3TxGj2wVANDifMpPztHnbYzdie0nnu1NBdXMEfg/file?c_luid=68d267b4' -o assets/images/connect-bild1-original.png
+          curl -fL 'https://uc55e2d7862647e86037e7001c5d.dl.dropboxusercontent.com/cd/0/get/DJTfel_D4JIgci0o8BPTA1ZSvFGpmRV0E0LdtH_nBHK0aw9K8JoxqhAs4p6kBaz7EzC3dWffYX1mwp4l7S8ql4D4-fowoX5kcVxaPwhoVAwdaWV-PaNBHhj1TV6Wa6hXCQBz0yJ7xYNv5PFs8EtCXd_qf-B3tvdQ5KUlDFcn7yJirg/file?c_luid=68d267b4' -o assets/images/bild-7-original.png
+          curl -fL 'https://ucbb76ec2183c8d1f46376fb1a26.dl.dropboxusercontent.com/cd/0/get/DJRJe63XMM7RoXnFrNgkUehLkZhtj_wuYIRJOuWjZgoFo0Anp2UHIvc9dTfgoyyt6SHThnwzKMwe7e6RwQz47mYM2wGCGxMpCYtRjxEXk5lLxpOPjYOtaFFOGXX9l530u7dz9PI2iBMbOfOMH7k89x1OSau6_fD3ZbVXV6E75i2s6Q/file?c_luid=68d267b4' -o assets/images/anlage-weiss-original.png
+          curl -fL 'https://uc1e39eed91d7f8b89977bb847df.dl.dropboxusercontent.com/cd/0/get/DJQCSvMgvkTUUo4exc-SnfBJpnQJln3BVuW9S_fnbXsDNZJdIS9GOjznI_cc5FP06yBlX1b3hD8Kt0bq-pJUvk1c3Rg3srxio3eHSkOvH8U6nv5v9BuzjTYVG7c774q3js7Nm2D66gWGjDism4Vh0-veA_j8ZF6ZgNA3q5C49gk4Gg/file?c_luid=68d267b4' -o assets/images/bild-6-original.png
+          curl -fL 'https://uc7ba7b46fc20305a30c36511b5e.dl.dropboxusercontent.com/cd/0/get/DJTPx0v9cJBJB0sfXpGLTLDLxAWXPw0lcatMwyUFXl2Ebabss6u1JyHmGpojK7DtK5XxPbv2TBhXF-QApRpxlAifcu3vyvS6KAYPtqynsNvh0kaSI_xAhFKFLpIiB1_zZOOnUbIgXjmY6rxsWj4rXR1C8UmvDTQMq4uvuFmEDKlSZg/file?c_luid=68d267b4' -o assets/images/edelstein-magnesium-original.jpg
+          curl -fL 'https://uc32f76695c08906553391452e23.dl.dropboxusercontent.com/cd/0/get/DJTbUOe3xKDftR2GYAeqolQwGMlPPcNVM8w_8Ti39AcPvgyiIMoqIY91Q1gxwyXAXoCsntHq1g6fQnbFjpJsTiOnk96VXgSMJpPBgPEfLGPX4T3WUEYFqRfpmq2NevkGATkJw47nNb3MS6L2o4Myoi71c0C0VUWzHHZz8CaxqUldJQ/file?c_luid=68d267b4' -o assets/images/content-water-01.png
+          curl -fL 'https://ucb533adc8c474715ef6cf7ed99f.dl.dropboxusercontent.com/cd/0/get/DJQh7mjb7xSl5Ekb_DD7xQC-3BNyWoTrfcX6Be2ctjPyskpHR9V0daI11ACzxr8oks_HyoFIXwMqjKXwytzEGM72TFh9GhCr1Hty81jvv-ZX2tDZ1zxradUrZNcCNq_Swf8Hx9X3SFPpwZ1VYJHCA4jJtPuVTvprREYjKTuKP41_Xw/file?c_luid=68d267b4' -o assets/images/content-water-03.png
+          curl -fL 'https://uc65904fbb3bd4ff27abe1669836.dl.dropboxusercontent.com/cd/0/get/DJSl_UWA6D3pg8vt7nF3rzdCYTskTLuh08dfDdCyi0KWVp08I51UQkOEiOSgrHnLhEUiLt2b3iIiuamUXTOt9dqF29nJDx0Tx9XQk-aI8t3CtGFj-vCwCKIWGm0bPMgODcOBDUom6qPoztoIRpwm94nDBUOjL9aGzbLO8SQ8roOw6g/file?c_luid=68d267b4' -o assets/images/frame-24.png
+          curl -fL 'https://ucc8a93b5b1641578daca334e7df.dl.dropboxusercontent.com/cd/0/get/DJQq1JjD7dVsxUvH7ajR36a5vY4zCa7mfRXRcmOlasjVD9jnoOJZHm3Q1qJdB1SJZ-fvxRLofhPaej4Tu4qNFswkNRHr4c3tNz49Y74VtHwm7Zh2pfrCki8af5gK5uLaIPOSujCOzWvn9jD2pUa82SynJdU75NexAusEOkt_kUvK-w/file?c_luid=68d267b4' -o assets/images/frame-25.png
+          curl -fL 'https://uc71d17809ab3274cb6db538f055.dl.dropboxusercontent.com/cd/0/get/DJSKW4_-fCQFLqVOR0DaeD1lGm7rF0Dn9EDuZhEzOMtSavofiMVH5ogn9UFJNW39WPFmKV15HytDEm4XcIXM7TxptZfkh9SvASGfBCutLR1BQWz4jYc9djORL6JpjcJZ_BjHVpq9BWP5RXAWgcogXbHQdhbiZ1fbpC9a7QNlW0Y3Gg/file?c_luid=68d267b4' -o assets/images/frame-26.png
+          curl -fL 'https://uc23586d090c09506ff904d346b1.dl.dropboxusercontent.com/cd/0/get/DJQhgnk1jb-_TWOtDWvABJGd672zKBazOBMUw4vkQcGgotJ0_cdDh0cMElsCcXtkt3Xt5d8dlm3Nta4M-Wr4KhhB2CkuGReGc4ECxMwuOnDPv8grwXuGdx2l7QsB03C5ujJE18bxs_wRGkILnb3OcQ9Mz4HUNVJUMQsS7Bup6l-p4g/file?c_luid=68d267b4' -o assets/images/frame-27.png
+          curl -fL 'https://uccec3ed988b4ba2345577a2ad38.dl.dropboxusercontent.com/cd/0/get/DJQjzfCZuJB1IvDtw8Ys_WiefpjaTTVGBsMlcWtR_cpxjIcYAtQ11ytxWTbQAzh-ED8eWCm4yBTrAutetAiJX9d6SXSYu4MCJ0pFyQ8aJWJdnZ0o72P1b1Bvjox4wEQ8Fnon04xW8OzCVwawttnpSCrLClKGbqUL0Rze-ri3bT-RDA/file?c_luid=68d267b4' -o assets/images/frame-28.png
+          curl -fL 'https://ucbe21a9da0d7c917a8a8362b296.dl.dropboxusercontent.com/cd/0/get/DJR1WYokUjdx7MF6sIDiJO4dUyReUkOrm6bJP1bZGOAN6x68tTHZBclUxJQolor0JAoTJ2VWdNtOM4a3PoL0HGlrKDyXFuuYQh3tOG1dpQblAHY2-bikPeJzYbNBoiD9ahhOCena8IwOO8M2gB05Ljw13O-d9NcR-jePunTkcXy5Lw/file?c_luid=68d267b4' -o assets/images/frame-29.png
+          curl -fL 'https://uc6ee7c4289220977e7b6858d8db.dl.dropboxusercontent.com/cd/0/get/DJTdLSgHPBu0DJlUxoA8oN5IGxdiBH2qQ3iwQrx2DJZYDe6esWUi5ULYj9Ql2dWPJTuvJQs7x-0RFNW56KB_raP3LQaUKtYEhXHTUYmjd2_5gO867iO4tlCH_G6mnAl7fDEipfKEqLn4v9kXRZ2zCQNjs29dWk5ainoGadNnMCdsdA/file?c_luid=68d267b4' -o assets/images/service-installation.svg
+          curl -fL 'https://uc25e13330d62b1061d41382b37f.dl.dropboxusercontent.com/cd/0/get/DJQfHseOi90C58PQKeymKETXJ0t_4hwSEsTMfvWIty-IPT-TXcqKQKCRIZmp9NiNaQIG2vi5NGNtaAAxJyUNrds6fWvn5YbkjjOtXLm9HXwZPRH4n3qE_9QCr2XQrqJYuaX73kSC1wv1xgaQ-lTiqBd2Fu9Qe-plWmVnPav5S285yQ/file?c_luid=68d267b4' -o assets/images/service-consulting.svg
+          curl -fL 'https://uc481bdfba1bc822af94dfe50337.dl.dropboxusercontent.com/cd/0/get/DJReA5MC6h8s3DVgmignL-4fRiA0OXhhTFJ1Td3lh6s9p3ez7Ikc5X9zktF4uAg8W04u0g7bs9g-CvXO156DFuO9pHX6GNrrflo-hSiHO6_URDAzECjBChUKx5YTX06pI14ELBpmbQKEqAg2bSW42jKdU4Wbz-IWHe4CNSZufWAiEg/file?c_luid=68d267b4' -o assets/images/service-instruction.svg
+          curl -fL 'https://uce816bc35a6c4b4ff74ea62fd4d.dl.dropboxusercontent.com/cd/0/get/DJR8zZ28QouG20JAvhHfMpvLcag--SrNaW3N9zgyz1JZsDSJKf_X-xlS6UZcDQGG6uVGvcoVmCszbSmwUzneCWofrhTHvM1TCf9QqiJZjok8sv9tb69dXev6NwQ6tzlJx8huOiUe61UY2rc4ckoOc35Ozd-Y0C-cAd1xKMRpJc3-9A/file?c_luid=68d267b4' -o assets/images/service-maintenance.svg
+          curl -fL 'https://uc93bc6ba35b32e6ff997ab3bc97.dl.dropboxusercontent.com/cd/0/get/DJRDVbChautPQwSUS7Su9quNfuBv5HBz77U9HxlB3IiocKGsHL5RvsgAwx1-npCJIWnVQf3V9WSkSfZBrg8Q5YF6FiY_kkG9OHRTzRTpmSpN2x2eEEWLwsAMFzQPnqD2WxSYEsPw5KYkqUzH1NUkrmFjAMb-haM8rCFVKuzwBHtmDA/file?c_luid=68d267b4' -o assets/docs/datenblatt.pdf
+          curl -fL 'https://uc678cb7bb59b3d1b8a7e48ee8b5.dl.dropboxusercontent.com/cd/0/get/DJRJeECwv2mEMmJqoHEtFWI_9fzDqfW6_8PuL001oNj23irtXCoRj2LdRtUxaR3v-UN3kaV1iXg0h1i8Exq3l-bI41uEq63L-zljR5J4E3vYHBQpV22QWRT9WBhq6p7HnsmkqjbkGnMnLDseYiuGi3zWXgedvrfnwoo5MfF-E9-yAg/file?c_luid=68d267b4' -o assets/docs/ebook-edelsteinwasser.pdf
+          curl -fL 'https://uca9326d5326da1ed97d9d1b6a1e.dl.dropboxusercontent.com/cd/0/get/DJTKUhMAVbx1Wc9FJ9N8GTympRV6WLs532omlyIw_X-teeJN2fI6uTaNwzcrGQ-r24rBcZWg8MvACwZ1mFChQ3n2YmhjuWRqBNrb3XcI7hy53ftW__ZHYJ528dGLiMKa_Ppzksqkxze6uRXTnFG0wyYMr07s3QegFaZPTwX3QNBLXw/file?c_luid=68d267b4' -o assets/docs/wasseranalyse-080223.pdf
+      - name: Commit imported assets
+        run: |
+          git config user.name "chatgpt-baltic-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/images assets/docs
+          if git diff --cached --quiet; then
+            echo "No asset changes."
+          else
+            git commit -m "Import original Baltic website assets"
+            git push
+          fi
