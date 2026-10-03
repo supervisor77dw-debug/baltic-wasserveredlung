@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.baltic-wasserveredlung.de/sitemap.xml
