@@ -231,3 +231,13 @@ linear-gradient(120deg,#cbd2ce 0 18%,#e9e7df 18% 35%,#b9c9c4 35% 38%,#e3dfd5 38%
  .footer-brand span{font-size:86px}.footer-brand strong{font-size:48px}
  .footer-legal{border:0;margin:0;padding-top:0}
 }
+
+/* Motion-background review pass */
+.bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-bg .bg-video{filter:brightness(.68) saturate(.82)}
+.basis .media .bg-video{filter:brightness(.48) saturate(.78)}
+.service-bg .bg-video{width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.72)}
+.video-footer{position:relative;overflow:hidden;isolation:isolate}
+.footer-video{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.30) saturate(.7)}
+.video-footer:before{content:"";position:absolute;z-index:-1;inset:0;background:rgba(8,25,34,.38)}
+@media(prefers-reduced-motion:reduce){.bg-video,.footer-video{display:none}}
