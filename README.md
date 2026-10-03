@@ -25,9 +25,21 @@ Dann `http://localhost:8000` im Browser öffnen. Der lokale Server stellt die Vi
 - Layout bei 1440, 1280, 1024, 768 und 390 px geprüft
 - Impressum und Datenschutz vorhanden
 - Google Maps nur als externer Link; kein Tracking oder Analytics
+- Wasser-Farbwelt aus Petrol, Baltic-Blau und Aqua (Tokens in `assets/css/styles.css`), Textkontraste nach WCAG AA
+
+## Videos
+
+Alle Videos sind stumm, ohne Metadaten und als Web-Loop (`autoplay muted loop playsinline`) mit Poster eingebunden.
+
+| Bereich | Datei | Quelle |
+|---|---|---|
+| Hero | `assets/videos/hero-glass.mp4` (9 s, 1080p, ca. 4 MB) | Pexels „Water Pouring in a Clear Glass“ (4037575) |
+| Basiswissen | `assets/videos/basis-waterfall.mp4` | bestehendes Asset |
+| Service | `assets/videos/service-water.mp4` | bestehendes Asset |
+| Footer | `assets/videos/footer-ripples.mp4` (5,6 s, 720p, ca. 2,3 MB) | Pixabay „Water, Blue, Ripples“ (1934), verlangsamt |
 
 ## Noch offen
 
 - Kontaktformular auf serverseitigen Versand umstellen, sobald ein Dienst abgestimmt ist
-- Finale Videoauswahl und rechtliche Prüfung von Impressum/Datenschutz
-- Bild-/Videooptimierung sowie Performance- und Lighthouse-Prüfung
+- Rechtliche Prüfung von Impressum/Datenschutz
+- Performance- und Lighthouse-Prüfung
