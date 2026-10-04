@@ -38,15 +38,30 @@ Alle Videos sind stumm, ohne Metadaten und als Web-Loop (`muted loop playsinline
 | Service | `assets/videos/service-water.mp4` | bestehendes Asset |
 | Footer | `assets/videos/footer-ripples.mp4` (5,6 s, 720p, ca. 2,3 MB) | Pixabay „Water, Blue, Ripples“ (1934), verlangsamt |
 
+## Logo
+
+Verbindliche Quelle ist `Baltic_Wasserveredlung_Designpaket_V1.0` (Logo V11; nur lokal, nicht im Repository). Die Website nutzt unveränderte Kopien in `assets/brand/`:
+
+| Datei | Quelle | Einsatz |
+|---|---|---|
+| `logo-primary.svg` | `02_WEB/logo-primary.svg` | Header (hell, Paper `#f5f4ef`) auf allen Seiten |
+| `logo-white.svg` | `01_LOGO_MASTER/BALTIC_WASSERVEREDLUNG_LOGO_WHITE.svg` | Footer auf dem Wasser-Video |
+| `logo-signet.svg` | `02_WEB/logo-signet.svg` | Favicon (SVG) |
+| `apple-touch-icon.png` | `02_WEB/apple-touch-icon.png` | Apple Touch Icon |
+
+- Logo als externe Datei mit `width="1000" height="690"`; CSS setzt nur die Breite (`--logo-width` 108/86/72 px, Footer 190 px), Höhe automatisch
+- Die viewBox enthält viel Leerraum; die Logo-Box (`aspect-ratio: 644 / 491`) zeigt per CSS nur den gezeichneten Bereich (x 187–831, y 129–620). Datei, Proportionen und Verläufe bleiben unverändert; keine Filter, keine `fill`-Overrides
+- Headerhöhe 112 px (Desktop), 96 px (Tablet), 84 px (Mobil)
+- Hinweise zum Designpaket: Wortmarke ist Live-Text (Arial) statt Pfade – ohne Arial (z. B. Android) wird eine Ersatzschrift verwendet; die mitgelieferten PNGs zeigen die Wortmarke enger als die SVG-Darstellung im Browser (`textLength`); in der weißen Variante bleibt die obere Welle Deep Blue und hat auf dunklem Grund wenig Kontrast; `apple-touch-icon.png` ist transparent (iOS hinterlegt Schwarz)
 ## SEO
 
-- Titel: „Umkehrosmoseanlagen & Wasseraufbereitung | Baltic Wasserveredlung“; Canonical, Open Graph und Twitter Card zeigen auf `https://www.baltic-wasserveredlung.de/` (OG-Bild `assets/images/og-baltic-wasserveredlung.jpg`, 1200 × 630, aus vorhandenem Produktbild)
+- Titel: „Umkehrosmoseanlagen & Wasseraufbereitung | Baltic Wasserveredlung“; Canonical, Open Graph und Twitter Card zeigen auf `https://www.baltic-wasserveredlung.de/` (OG-Bild `assets/images/og-baltic-wasserveredlung-logo.jpg`, 1200 × 630, aus dem Primary-Logo-Master auf Paper `#f5f4ef`)
 - Eine H1 (sichtbarer Kicker „Umkehrosmoseanlagen & Wasseraufbereitung aus Kiel“), danach H2/H3/H4
 - JSON-LD: `WebSite` und `LocalBusiness` (Anschrift, Telefon, E-Mail, Leistungen) – keine Öffnungszeiten, Profile oder Bewertungen
 - Kein `Product`-Markup: Ohne Preis, Verfügbarkeit oder Bewertungen ist es nicht für Rich Results geeignet
 - `robots.txt` erlaubt alles und verweist auf `sitemap.xml` (Startseite, Impressum, Datenschutz; ohne `lastmod`)
 - Impressum und Datenschutz sind indexierbar und haben ein Canonical, aber keine Keyword-Optimierung
-- Favicon/Apple-Touch-Icon/Webmanifest: bewusst offen. Im Asset-Bestand, auf der Wix-Seite (nur Standard-Wix-Favicon) und in den PDFs gibt es kein offizielles Baltic-Logo oder -Signet; die Marke erscheint nur als Textwortmarke. Ein Favicon wird erst aus freigegebenem Markenmaterial abgeleitet. Bis dahin verhindert ein leerer Platzhalter (`<link rel="icon" href="data:,">`) unnötige 404-Anfragen auf `/favicon.ico`
+- Favicon: `favicon.ico` (16/32/48 px aus `signet-512.png`) und `assets/brand/logo-signet.svg`; Apple Touch: `assets/brand/apple-touch-icon.png`; JSON-LD `logo`: `logo-primary.svg`
 - `vercel.json`: `cleanUrls: false` (`.html`-URLs sind kanonisch), 301-Weiterleitungen der alten Wix-URLs, eigene `404.html` (`noindex`)
 
 ### Weiterleitungen alte Wix-Seite
@@ -69,7 +84,6 @@ Branch `seo-grundoptimierung`, Tag `referenz-2026-10-04` – technisch freigegeb
 ## Noch offen
 
 - Kontaktformular auf serverseitigen Versand umstellen (eigenes Arbeitspaket; bis dahin `mailto`)
-- Favicon: separates Branding-Thema; der neutrale Zustand ohne Favicon ist freigegeben
 - **Offen:** `assets/docs/datenblatt.pdf` enthält weiterhin die Formulierung „aus gesundheitlichen Gründen sicherer“ (tanklose Anlagen). Die Datei wird erst nach Abstimmung verändert oder ersetzt
 - Keine DNS-Änderung und keine Änderung an der bestehenden Wix-Domain vor Freigabe
 

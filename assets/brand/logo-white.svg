@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 690" role="img" aria-labelledby="title desc">
+<title id="title">Baltic Wasserveredlung – Logo V11</title>
+<desc id="desc">Harmonisch gestaffelte Wasserwellen mit gemeinsamem rechten Endpunkt und abgestufter Länge.</desc>
+
+<defs>
+  <linearGradient id="gDeep" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0%" stop-color="#0B3A55"/>
+    <stop offset="58%" stop-color="#0E526D"/>
+    <stop offset="100%" stop-color="#0B3A55"/>
+  </linearGradient>
+  <linearGradient id="gAqua" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0%" stop-color="#159DB8"/>
+    <stop offset="55%" stop-color="#2FB6D6"/>
+    <stop offset="100%" stop-color="#159DB8"/>
+  </linearGradient>
+  <linearGradient id="gLight" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0%" stop-color="#5FC7D5"/>
+    <stop offset="55%" stop-color="#7ED6E3"/>
+    <stop offset="100%" stop-color="#5FC7D5"/>
+  </linearGradient>
+</defs>
+
+<!-- V11:
+     gemeinsamer rechter Endpunkt x=758.
+     Untere Welle Start x=345.
+     Mittlere Welle Start x=272.
+     Differenz = 73.
+     Obere Welle wird mit demselben Faktor verlängert: Start x=199.
+     So entsteht eine gleichmäßige Längenstaffelung 559 / 486 / 413. -->
+<g id="signet">
+  <path fill="url(#gDeep)" d="
+    M199 220
+    C273 244,340 230,410 192
+    C493 147,576 132,654 142
+    C693 144,727 154,758 172
+    C726 163,696 161,665 165
+    C590 174,525 199,457 233
+    C367 278,278 279,199 220 Z"/>
+
+  <path fill="url(#gAqua)" d="
+    M272 286
+    C331 305,386 292,444 260
+    C510 223,579 204,654 208
+    C693 210,727 220,758 238
+    C726 229,696 227,665 231
+    C597 239,539 262,478 292
+    C405 328,337 330,272 286 Z"/>
+
+  <path fill="url(#gLight)" d="
+    M345 348
+    C391 363,433 350,478 325
+    C532 295,589 276,654 278
+    C693 280,727 290,758 308
+    C726 299,696 297,665 301
+    C607 308,557 327,505 353
+    C446 382,392 382,345 348 Z"/>
+</g>
+
+<g id="wordmark" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
+  <text x="515" y="505" fill="#FFFFFF" font-size="149" font-weight="700"
+        textLength="628" lengthAdjust="spacingAndGlyphs">BALTIC</text>
+  <text x="515" y="558" fill="#FFFFFF" font-size="41.5" font-weight="400"
+        textLength="610" lengthAdjust="spacing">WASSERVEREDLUNG</text>
+  <text x="515" y="610" fill="#FFFFFF" font-size="22" font-weight="400"
+        textLength="600" lengthAdjust="spacing">REINES WASSER. KLARE LÖSUNGEN.</text>
+</g>
+</svg>
