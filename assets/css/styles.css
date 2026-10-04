@@ -121,15 +121,15 @@ p { max-width: 66ch; margin: 0 0 1rem; }
   flex: 0 0 auto;
   display: block;
   width: var(--logo-width);
-  aspect-ratio: 644 / 491;
+  aspect-ratio: 646 / 492;
   overflow: hidden;
 }
 .brand img, .footer-brand img {
   display: block;
-  width: 155.28%;
+  width: 154.799%;
   max-width: none;
   height: auto;
-  margin: -20.031% 0 0 -29.037%;
+  margin: -19.969% 0 0 -29.257%;
 }
 .nav { display: flex; align-items: center; gap: clamp(.9rem, 1.8vw, 1.6rem); margin-left: auto; }
 .nav a:not(.btn) {
@@ -461,7 +461,7 @@ p { max-width: 66ch; margin: 0 0 1rem; }
 .footer-col a { display: block; width: fit-content; margin: .35rem 0; text-decoration: none; overflow-wrap: anywhere; }
 .footer-col a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .footer-col p { margin: .35rem 0; }
-.footer-brand { display: block; width: var(--footer-logo-width); aspect-ratio: 644 / 491; overflow: hidden; align-self: center; justify-self: end; }
+.footer-brand { display: block; width: var(--footer-logo-width); aspect-ratio: 646 / 492; overflow: hidden; align-self: center; justify-self: end; }
 .footer-legal { grid-column: 1 / -1; margin: 0; padding-top: 1.1rem; border-top: 1px solid var(--color-dark-line); font-size: var(--type-small); }
 
 .legal-page { width: min(100% - 2 * var(--page-padding), 900px); margin: 0 auto; padding: calc(var(--header-height) + 2rem) 0 var(--section-space); }

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="170 80 620 330"><defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="92" fill="#0B3A55"/><svg x="44" y="116" width="424" height="280" viewBox="170 80 620 330" preserveAspectRatio="xMidYMid meet"><defs>
   <linearGradient id="gDeep" x1="0" y1="1" x2="1" y2="0">
     <stop offset="0%" stop-color="#0B3A55"/>
     <stop offset="58%" stop-color="#0E526D"/>
@@ -15,7 +15,7 @@
     <stop offset="100%" stop-color="#5FC7D5"/>
   </linearGradient>
 </defs><g>
-  <path fill="url(#gDeep)" d="
+  <path fill="#FFFFFF" d="
     M199 220
     C273 244,340 230,410 192
     C493 147,576 132,654 142
@@ -41,4 +41,4 @@
     C726 299,696 297,665 301
     C607 308,557 327,505 353
     C446 382,392 382,345 348 Z"/>
-</g></svg>
+</g></svg></svg>
