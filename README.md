@@ -62,11 +62,30 @@ Alle Videos sind stumm, ohne Metadaten und als Web-Loop (`muted loop playsinline
 | `/impressum`, `/datenschutz` | `.html`-Variante | 301 |
 | `/cart-page`, Checkout, Wix-Vorlagenprodukte, sonstige | – | 404 |
 
+## Referenzstand
+
+Branch `seo-grundoptimierung`, Tag `referenz-2026-10-04` – technisch freigegeben am 04.10.2026 (Lighthouse lokal Mobile 99/100/100/100, Desktop 100/100/100/100). Weitere inhaltliche oder gestalterische Änderungen nur nach Freigabe.
+
 ## Noch offen
 
 - Kontaktformular auf serverseitigen Versand umstellen (eigenes Arbeitspaket; bis dahin `mailto`)
-- Offizielles Logo/Signet für Favicon, Apple-Touch-Icon und Webmanifest
-- `assets/docs/datenblatt.pdf` enthält weiterhin die frühere Aussage, tanklose Anlagen seien „aus gesundheitlichen Gründen sicherer“; auf der Website ist sie neutral formuliert
+- Favicon: separates Branding-Thema; der neutrale Zustand ohne Favicon ist freigegeben
+- **Offen:** `assets/docs/datenblatt.pdf` enthält weiterhin die Formulierung „aus gesundheitlichen Gründen sicherer“ (tanklose Anlagen). Die Datei wird erst nach Abstimmung verändert oder ersetzt
+- Keine DNS-Änderung und keine Änderung an der bestehenden Wix-Domain vor Freigabe
+
+### Gesundheitsnahe Werbeaussagen (Einzelentscheidung offen, unverändert)
+
+| Stelle | Aussage |
+|---|---|
+| Intro-Lead | „Gefiltert. Gesichert. Gesund.“ |
+| Basiswissen | „Sie müssen nicht darauf vertrauen, ob tatsächlich zu jedem Zeitpunkt einwandfreies Trinkwasser aus Ihrer Wasserleitung kommt.“ |
+| Basiswissen | „…von Schadstoffen und Verunreinigungen getrennt…“ |
+| Basiswissen | „…zur natürlichen Verwirbelung durch ein Edelstahlwellrohr und ein Modul geleitet.“ |
+| Edelsteinwasser | „In unserem Körper erfüllt es lebenswichtige Aufgaben.“ (im Kontext eines Produktangebots) |
+| Story-Karte Vision | „…in Qualität und Struktur natürlichem Quellwasser möglichst nahekommt.“ |
+| Story-Karte | „Mehr als nur gefiltert … weitere technische Veredelungsschritte“ |
+| Hero | „Wasser in seiner reinsten Form“ / „Erleben Sie reines Wasser – jeden Tag.“ (eher Werbesprache, geringes Risiko) |
+| PDF | `assets/docs/ebook-edelsteinwasser.pdf` (Fremdmaterial Puraja) – Inhalt auf Gesundheitsaussagen prüfen |
 
 ### Ungeklärte Angaben Impressum/Datenschutz
 
@@ -74,12 +93,12 @@ Die sichtbaren Prüfhinweise wurden entfernt; folgende Angaben sind vor dem Live
 
 Impressum
 - Umsatzsteuer-ID fehlt (die bisherige Wix-Seite nennt DE297012970 – Bestätigung offen)
-- Kontaktdaten abweichend zur Wix-Seite: dort Telefon +49 431 5402-0, Telefax +49 431 5402-150, E-Mail info@…; neu 0431 5402445 und vertrieb@… – maßgebliche Angaben festlegen
-- Inhaltlich Verantwortlicher nach § 18 Abs. 2 MStV, falls redaktionelle Inhalte vorliegen – klären
-- Angaben zur Verbraucherstreitbeilegung (§ 36 VSBG) – klären
+- Kontaktdaten abweichend zur Wix-Seite: dort Telefon +49 431 5402-0, Telefax +49 431 5402-150, E-Mail info@…, Mobil 0173 6987939; neu 0431 5402445, Mobil 0172 3043369 und vertrieb@… – endgültige Telefon-, Mobil-, Fax- und E-Mail-Angaben festlegen
+- Inhaltlich Verantwortlicher nach § 18 Abs. 2 MStV, falls redaktionelle Inhalte vorliegen – prüfen
+- Hinweis zur Verbraucherstreitbeilegung (§ 36 VSBG) anhand des tatsächlichen Unternehmens und der Beschäftigtenzahl prüfen
 
 Datenschutz
-- Hoster fehlt: Die neue Seite läuft auf Vercel (Vercel Inc., USA); Name/Anschrift, Auftragsverarbeitungsvertrag und Drittlandübermittlung sind zu bestätigen. Die Wix-Erklärung nennt einen anderen Hoster (crossmedia1, Thomas Ferenz, Kiel) – aktuellen Stand klären
+- Hoster: Die neue Seite läuft auf Vercel (Vercel Inc., USA). Datenschutzinformationen erst nach Klärung des tatsächlich verwendeten Vercel-Tarifs finalisieren (Auftragsverarbeitung, Drittlandübermittlung, Logs). Die Wix-Erklärung nennt einen anderen Hoster (crossmedia1, Thomas Ferenz, Kiel)
 - Kontaktformular: aktuell `mailto` (Versand über das E-Mail-Programm des Nutzers); nach Umstellung auf serverseitigen Versand den Dienst ergänzen
 - Telefonnummer und E-Mail der verantwortlichen Stelle an das Impressum angleichen
 - Speicherdauer, SSL/TLS-Hinweis und Widerspruchsrecht (Art. 21 DSGVO) – Umfang mit der rechtlichen Prüfung abstimmen
