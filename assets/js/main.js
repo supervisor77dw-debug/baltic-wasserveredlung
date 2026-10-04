@@ -17,6 +17,42 @@ if(reducedMotion.matches){
   });
 }
 
+// Below-the-fold videos (and their posters) load only near the viewport and pause when out of view.
+const lazyVideos=document.querySelectorAll('video[data-lazy-video]');
+const setPoster=video=>{
+  if(video.dataset.poster&&!video.getAttribute('poster')) video.setAttribute('poster',video.dataset.poster);
+};
+const loadVideo=video=>{
+  setPoster(video);
+  if(reducedMotion.matches||video.dataset.loaded) return;
+  video.querySelectorAll('source[data-src]').forEach(source=>{source.src=source.dataset.src;});
+  video.dataset.loaded='true';
+  video.load();
+};
+const playVideo=video=>{
+  if(reducedMotion.matches) return;
+  const p=video.play();
+  if(p&&p.catch) p.catch(()=>{});
+};
+if(lazyVideos.length){
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        const video=entry.target;
+        if(entry.isIntersecting){
+          loadVideo(video);
+          playVideo(video);
+        }else if(video.dataset.loaded){
+          video.pause();
+        }
+      });
+    },{rootMargin:'600px 0px'});
+    lazyVideos.forEach(video=>observer.observe(video));
+  }else{
+    lazyVideos.forEach(video=>{loadVideo(video);playVideo(video);});
+  }
+}
+
 if(btn&&nav){
   const setMenuOpen=open=>{
     nav.classList.toggle('open',open);
