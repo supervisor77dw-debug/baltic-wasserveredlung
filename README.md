@@ -45,7 +45,8 @@ Verbindliche Quelle ist `Baltic_Wasserveredlung_Designpaket_V1.1` (Logo V11, Wor
 | Datei | Einsatz |
 |---|---|
 | `assets/brand/logo-primary.svg` | Header (hell, Paper `#f5f4ef`) auf allen Seiten |
-| `assets/brand/logo-white.svg` | Footer auf dem Wasser-Video (vollständig weiß) |
+| `assets/brand/logo-dark-background.svg` | Footer auf dem Wasser-Video: abgeleitet aus `logo-primary.svg`, Geometrie und Wellenverläufe unverändert, nur die drei Textfüllungen auf `#FFFFFF` |
+| `assets/brand/logo-white.svg` | Monochrome Weißvariante (Designsystem; derzeit nicht eingebunden) |
 | `assets/brand/favicon.svg` | Favicon (SVG, quadratische Kleinformatmarke) |
 | `favicon.ico` | Favicon-Fallback (16/32/48 px) |
 | `assets/brand/apple-touch-icon.png` | Apple Touch Icon (Deep-Blue-Hintergrund) |
@@ -55,11 +56,20 @@ Verbindliche Quelle ist `Baltic_Wasserveredlung_Designpaket_V1.1` (Logo V11, Wor
 - Die viewBox enthält viel Leerraum; die Logo-Box (`aspect-ratio: 646 / 492`) zeigt per CSS nur den gezeichneten Bereich (x 189–835, y 129–621). Datei, Proportionen und Verläufe bleiben unverändert; keine Filter, keine `fill`-Overrides
 - Headerhöhe 112 px (Desktop), 96 px (Tablet), 84 px (Mobil)
 - OG-Bild `assets/images/og-baltic-wasserveredlung-logo.jpg` aus `logo-primary.svg` (V1.1) auf Paper gerendert
+- Footer-Logo 236 px (≤ 620 px: 208 px) auf einer Glasfläche mit hellem Radialakzent, damit die dunkle obere Welle auf dem Video lesbar bleibt
+
+## Design-Finishing
+
+- Produktbühne: alle drei Anlagen in identischen Containern (`aspect-ratio: 796 / 700`, `object-fit: cover`); `--product-focus-y` gleicht die Bildlage der Quellen aus (Standard 17 %, Connect 100 %)
+- Premium-Layer nur per CSS: Glasflächen, gestaffelte Schatten, dezente Aqua-Akzente, Hover-/Focus-Zustände; Hover-Effekte nur unter `(hover: hover)`, Bewegungen nur unter `prefers-reduced-motion: no-preference`
+- Accordions (`details.accordion`: Produktdetails und FAQ) mit weicher Höhenanimation in `main.js` (entfällt bei reduzierter Bewegung); Scrollspy setzt `aria-current` in der Navigation
+- FAQ (`#faq`, 11 Fragen) vor dem Kontakt; das `FAQPage`-JSON-LD entspricht exakt dem sichtbaren Text und muss bei Textänderungen mit angepasst werden
+
 ## SEO
 
 - Titel: „Umkehrosmoseanlagen & Wasseraufbereitung | Baltic Wasserveredlung“; Canonical, Open Graph und Twitter Card zeigen auf `https://www.baltic-wasserveredlung.de/` (OG-Bild `assets/images/og-baltic-wasserveredlung-logo.jpg`, 1200 × 630, aus dem Primary-Logo-Master auf Paper `#f5f4ef`)
 - Eine H1 (sichtbarer Kicker „Umkehrosmoseanlagen & Wasseraufbereitung aus Kiel“), danach H2/H3/H4
-- JSON-LD: `WebSite` und `LocalBusiness` (Anschrift, Telefon, E-Mail, Leistungen) – keine Öffnungszeiten, Profile oder Bewertungen
+- JSON-LD: `WebSite` und `LocalBusiness` (Anschrift, Telefon, E-Mail, Leistungen) – keine Öffnungszeiten, Profile oder Bewertungen; zusätzlich `FAQPage` aus dem sichtbaren FAQ
 - Kein `Product`-Markup: Ohne Preis, Verfügbarkeit oder Bewertungen ist es nicht für Rich Results geeignet
 - `robots.txt` erlaubt alles und verweist auf `sitemap.xml` (Startseite, Impressum, Datenschutz; ohne `lastmod`)
 - Impressum und Datenschutz sind indexierbar und haben ein Canonical, aber keine Keyword-Optimierung

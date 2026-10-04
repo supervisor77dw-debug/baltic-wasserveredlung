@@ -74,3 +74,45 @@ if(btn&&nav){
     if(btn.getAttribute('aria-expanded')==='true'&&!header.contains(e.target)) setMenuOpen(false);
   });
 }
+
+// Smooth height animation for native <details>; without JS or with reduced motion they open instantly.
+document.querySelectorAll('details.accordion').forEach(details=>{
+  const summary=details.querySelector('summary');
+  if(!summary||!details.animate) return;
+  let animation=null;
+  const finish=open=>{
+    details.open=open;
+    details.classList.remove('is-animating');
+    details.style.height='';
+    animation=null;
+  };
+  summary.addEventListener('click',e=>{
+    if(reducedMotion.matches) return;
+    e.preventDefault();
+    const opening=animation?details.dataset.opening!=='true':!details.open;
+    const start=details.offsetHeight;
+    if(animation) animation.cancel();
+    details.classList.add('is-animating');
+    if(opening) details.open=true;
+    const end=opening?details.scrollHeight:summary.offsetHeight;
+    details.dataset.opening=String(opening);
+    animation=details.animate({height:[start+'px',end+'px']},{duration:Math.min(480,Math.max(240,Math.abs(end-start)*.9)),easing:'cubic-bezier(.2,.7,.2,1)'});
+    animation.onfinish=()=>finish(opening);
+    animation.oncancel=()=>{details.classList.remove('is-animating');};
+  });
+});
+
+// Mark the nav link of the section currently in view.
+const navLinks=nav?[...nav.querySelectorAll('a[href^="#"]:not(.btn)')]:[];
+if(navLinks.length&&'IntersectionObserver' in window){
+  const byId=new Set(navLinks.map(a=>a.getAttribute('href').slice(1)));
+  const sections=[...document.querySelectorAll('main > section')];
+  const setCurrent=id=>navLinks.forEach(a=>{
+    if(byId.has(id)&&a.getAttribute('href')==='#'+id) a.setAttribute('aria-current','true');
+    else a.removeAttribute('aria-current');
+  });
+  const spy=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting) setCurrent(entry.target.id); });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(section=>spy.observe(section));
+}
