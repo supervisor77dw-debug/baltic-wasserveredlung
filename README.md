@@ -61,6 +61,8 @@ Verbindliche Quelle ist `Baltic_Wasserveredlung_Designpaket_V1.1` (Logo V11, Wor
 ## Design-Finishing
 
 - Produktbühne: alle drei Anlagen in identischen Containern (`aspect-ratio: 796 / 700`, `object-fit: cover`); `--product-focus-y` gleicht die Bildlage der Quellen aus (Standard 17 %, Connect 100 %)
+- UX-/Conversion-Orientierung: kompakte Vertrauensleiste ausschließlich mit veröffentlichtem Standort und Serviceumfang; pro Modell ein belegter Auswahlhinweis sowie eine statische, auch ohne JavaScript funktionierende Entscheidungshilfe
+- CTA-Texte nach Kontext; der zentrale Beratungsweg bleibt einheitlich gestaltet und die Hauptnavigation enthält weiterhin keinen FAQ-Punkt
 - Premium-Layer nur per CSS: Glasflächen, gestaffelte Schatten, dezente Aqua-Akzente, Hover-/Focus-Zustände; Hover-Effekte nur unter `(hover: hover)`, Bewegungen nur unter `prefers-reduced-motion: no-preference`
 - Accordions (`details.accordion`: Produktdetails und FAQ) mit weicher Höhenanimation in `main.js` (entfällt bei reduzierter Bewegung); Scrollspy setzt `aria-current` in der Navigation
 - FAQ (`#faq`, 11 Fragen) vor dem Kontakt; das `FAQPage`-JSON-LD entspricht exakt dem sichtbaren Text und muss bei Textänderungen mit angepasst werden
