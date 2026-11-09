@@ -96,9 +96,32 @@ Verbindliche Quelle ist `Baltic_Wasserveredlung_Designpaket_V1.1` (Logo V11, Wor
 
 Branch `seo-grundoptimierung`, Tag `referenz-2026-10-04` – technisch freigegeben am 04.10.2026 (Lighthouse lokal Mobile 99/100/100/100, Desktop 100/100/100/100). Weitere inhaltliche oder gestalterische Änderungen nur nach Freigabe.
 
+## Kontaktformular
+
+Ablauf: Browser → HTTPS-POST `/api/contact` (`api/contact.js`, Vercel Node Function) → SMTP Crossmedia → Postfach. Kein `mailto`, keine Seitenweiterleitung.
+
+- Felder: Vorname, Nachname, E-Mail (Pflicht), Telefon, Nachricht (Pflicht); Längengrenzen 80/80/254/40/5000 Zeichen, Request maximal 10 KB
+- Nur `POST`, JSON oder `application/x-www-form-urlencoded`, nur von der eigenen Domain bzw. eigenen Vercel-Deployments (Origin-Prüfung)
+- `From` = Baltic-Absender aus `CONTACT_FROM`; Besucheradresse nur als `Reply-To`; Steuerzeichen werden aus einzeiligen Feldern entfernt
+- Spamschutz: Honeypot-Feld `website`, Mindestausfüllzeit 3 s (`_t`), höchstens 3 Links, Rate Limit 5 Anfragen je IP in 10 Minuten (je Funktionsinstanz). Kein Captcha
+- Der Browser erhält nur allgemeine Fehlercodes, keine internen Details
+
+Environment Variables (nur in Vercel, nie im Repository):
+
+| Name | Inhalt |
+|---|---|
+| `SMTP_HOST` | SMTP-Server (Crossmedia: `server.crossmedia1.de`) |
+| `SMTP_PORT` | `587` (STARTTLS erzwungen) |
+| `SMTP_USER` | Anmeldename des Versandpostfachs |
+| `SMTP_PASS` | Passwort des Versandpostfachs (Typ *Sensitive*) |
+| `CONTACT_FROM` | zulässiger Absender, z. B. `Website Baltic Wasserveredlung <vertrieb@baltic-wasserveredlung.de>` |
+| `CONTACT_TO` | Empfänger der Anfragen |
+| `CONTACT_ALLOWED_ORIGINS` | optional, weitere erlaubte Origins (kommagetrennt) |
+
+Fehlt eine Pflichtvariable, antwortet die API mit 503 und das Formular zeigt die Fehlermeldung.
+
 ## Noch offen
 
-- Kontaktformular auf serverseitigen Versand umstellen (eigenes Arbeitspaket; bis dahin `mailto`)
 - **Offen:** `assets/docs/datenblatt.pdf` enthält weiterhin die Formulierung „aus gesundheitlichen Gründen sicherer“ (tanklose Anlagen). Die Datei wird erst nach Abstimmung verändert oder ersetzt
 - Keine DNS-Änderung und keine Änderung an der bestehenden Wix-Domain vor Freigabe
 

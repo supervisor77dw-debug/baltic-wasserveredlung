@@ -540,6 +540,11 @@ p { max-width: 66ch; margin: 0 0 1rem; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--color-aqua); outline: 2px solid var(--color-aqua); outline-offset: 2px; }
 .contact-form textarea { min-height: 130px; resize: vertical; }
 .contact-form .btn { margin-top: .25rem; }
+.contact-form .btn:disabled { cursor: progress; opacity: .7; }
+.form-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-status { margin: 1rem 0 0; font-size: .95rem; font-weight: 600; }
+.form-status[data-state="ok"] { color: var(--color-aqua); }
+.form-status[data-state="error"] { color: #ffd2c2; }
 .map-panel {
   min-height: 220px;
   display: flex;

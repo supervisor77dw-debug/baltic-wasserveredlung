@@ -1,0 +1,9 @@
+{
+  "name": "baltic-wasserveredlung",
+  "private": true,
+  "description": "Statische Website; einzige Server-Funktion: api/contact.js (Kontaktformular per SMTP).",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "nodemailer": "10.2.1"
+  }
+}

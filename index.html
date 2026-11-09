@@ -594,12 +594,15 @@
           <a href="mailto:vertrieb@baltic-wasserveredlung.de">vertrieb@baltic-wasserveredlung.de</a>
         </address>
       </div>
-      <form class="contact-form" action="mailto:vertrieb@baltic-wasserveredlung.de" method="post" enctype="text/plain">
+      <form class="contact-form" action="/api/contact" method="post" data-contact-form>
         <h3>Kontakt aufnehmen</h3>
-        <div class="form-row"><label>Vorname<input type="text" name="Vorname" autocomplete="given-name"></label><label>Nachname<input type="text" name="Nachname" autocomplete="family-name"></label></div>
-        <div class="form-row"><label>E-Mail*<input type="email" name="E-Mail" autocomplete="email" required></label><label>Telefonnummer<input type="tel" name="Telefon" autocomplete="tel"></label></div>
-        <label>Nachricht*<textarea name="Nachricht" rows="5" required></textarea></label>
+        <div class="form-row"><label>Vorname<input type="text" name="Vorname" autocomplete="given-name" maxlength="80"></label><label>Nachname<input type="text" name="Nachname" autocomplete="family-name" maxlength="80"></label></div>
+        <div class="form-row"><label>E-Mail*<input type="email" name="E-Mail" autocomplete="email" maxlength="254" required></label><label>Telefonnummer<input type="tel" name="Telefon" autocomplete="tel" maxlength="40"></label></div>
+        <label>Nachricht*<textarea name="Nachricht" rows="5" maxlength="5000" required></textarea></label>
+        <div class="form-hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_t" value="">
         <button class="btn btn--light" type="submit">Absenden</button>
+        <p class="form-status" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
     <a class="map-panel content-width" href="https://www.google.com/maps/search/?api=1&query=Grasweg+48+24118+Kiel" target="_blank" rel="noopener" aria-label="Standort Grasweg 48 in Google Maps öffnen">

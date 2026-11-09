@@ -116,3 +116,47 @@ if(navLinks.length&&'IntersectionObserver' in window){
   },{rootMargin:'-45% 0px -50% 0px'});
   sections.forEach(section=>spy.observe(section));
 }
+
+// Contact form: HTTPS POST to /api/contact, no mail client, no page reload.
+const contactForm=document.querySelector('form[data-contact-form]');
+if(contactForm&&window.fetch){
+  const submitBtn=contactForm.querySelector('button[type="submit"]');
+  const statusEl=contactForm.querySelector('.form-status');
+  const startField=contactForm.querySelector('input[name="_t"]');
+  const btnLabel=submitBtn.textContent;
+  const MSG_OK='Vielen Dank. Ihre Nachricht wurde erfolgreich übermittelt.';
+  const MSG_ERR='Die Nachricht konnte leider nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch.';
+  if(startField) startField.value=String(Date.now());
+  const showStatus=(text,state)=>{
+    statusEl.textContent=text;
+    statusEl.dataset.state=state;
+    statusEl.hidden=false;
+  };
+  contactForm.addEventListener('submit',async event=>{
+    event.preventDefault();
+    if(!contactForm.reportValidity()) return;
+    const payload=Object.fromEntries(new FormData(contactForm).entries());
+    submitBtn.disabled=true;
+    submitBtn.setAttribute('aria-busy','true');
+    submitBtn.textContent='Wird gesendet …';
+    statusEl.hidden=true;
+    try{
+      const response=await fetch(contactForm.getAttribute('action'),{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      const result=await response.json().catch(()=>({}));
+      if(!response.ok||!result.ok) throw new Error('send');
+      contactForm.reset();
+      if(startField) startField.value=String(Date.now());
+      showStatus(MSG_OK,'ok');
+    }catch(error){
+      showStatus(MSG_ERR,'error');
+    }finally{
+      submitBtn.disabled=false;
+      submitBtn.removeAttribute('aria-busy');
+      submitBtn.textContent=btnLabel;
+    }
+  });
+}
