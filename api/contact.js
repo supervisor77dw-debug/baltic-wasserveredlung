@@ -18,7 +18,7 @@ const ALLOWED_ORIGINS = new Set([
   'https://baltic-wasserveredlung.vercel.app',
 ]);
 // Preview-Deployments dieses Projekts
-const PREVIEW_ORIGIN_RE = /^https:\/\/baltic-wasserveredlung-[a-z0-9-]+\.vercel\.app$/;
+const PREVIEW_ORIGIN_RE = /^https://baltic-wasserveredlung-[a-z0-9]+-supervisor77dw-debugs-projects.vercel.app$/;
 
 const EMAIL_RE = /^[^\s@<>()",;:\\[\]]{1,64}@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
 const PHONE_RE = /^[0-9+()\/.\s-]{3,40}$/;
